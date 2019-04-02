@@ -1,0 +1,53 @@
+package com.company;
+
+import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;import java.awt.event.ComponentAdapter;
+
+public class LP extends JFrame {
+    JButton joinbtn;
+    JList list;
+
+    public LP() {
+        String Languages [] = {"Server 1","Server 2","Server 3","Server 1","Server 2","Server 3","Server 1","Server 2","Server 3","Server 1","Server 2","Server 3"};
+        this.setSize(400,400);
+        joinbtn = new JButton("Join");
+        joinbtn.setFocusPainted(false);
+        joinbtn.setContentAreaFilled(false);
+        JPanel panel = new JPanel(new GridBagLayout());
+        joinbtn.addActionListener(this::actionPerformed);
+        list = new JList(Languages);
+        panel.setLayout(null);
+        setTitle("Join Page");
+
+        Border border = BorderFactory.createLineBorder(Color.BLACK, 2);
+        joinbtn.setBorder(border);
+        JLabel s = new JLabel("Please select server to join");
+        s.setBounds(110,20,160,20);
+        list.setBorder(border);
+        list.setBounds(90,50,200,150);
+        joinbtn.setBounds(210,220,80,40);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
+        panel.add(s);
+        panel.add(list);
+        panel.add(joinbtn);
+
+        this.add(panel);
+        this.setVisible(true);
+
+
+    }
+    public static void main(String [] args){
+        LP s = new LP();
+
+
+    }
+
+    public void actionPerformed(ActionEvent e){
+
+        }
+}
+
